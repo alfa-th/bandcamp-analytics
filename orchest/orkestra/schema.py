@@ -1,0 +1,28 @@
+from google.cloud.bigquery import SchemaField
+
+BANDCAMP_SCHEMA = [
+    SchemaField("row_id", "INT64"),
+    SchemaField("_id", "STRING"),
+    SchemaField("art_url", "STRING"),
+    SchemaField("item_type", "STRING"),
+    SchemaField("utc_date", "DATETIME"),
+    SchemaField("country_code", "STRING"),
+    SchemaField("track_album_slug_text", "STRING"),
+    SchemaField("country", "STRING"),
+    SchemaField("slug_type", "STRING"),
+    SchemaField("amount_paid_fmt", "STRING"),
+    SchemaField("item_price", "FLOAT64"),
+    SchemaField("item_description", "STRING"),
+    SchemaField("art_id", "FLOAT64"),
+    SchemaField("url", "STRING"),
+    SchemaField("amount_paid", "FLOAT64"),
+    SchemaField("releases", "STRING"),
+    SchemaField("artist_name", "STRING"),
+    SchemaField("currency", "STRING"),
+    SchemaField("album_title", "STRING"),
+    SchemaField("amount_paid_usd", "FLOAT64"),
+    SchemaField("package_image_id", "FLOAT64"),
+    SchemaField("amount_over_fmt", "STRING"),
+    SchemaField("item_slug", "STRING"),
+    SchemaField("addl_count", "FLOAT64"),
+]
