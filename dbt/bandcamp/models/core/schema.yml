@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: fact
+    description: >
+      Presumably the fact table of bandcamp data

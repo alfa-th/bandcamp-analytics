@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    database: de-zoomcamp-capstone
+    schema: bandcamp
+
+    tables:
+      - name: partitioned_clustered_root
