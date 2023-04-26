@@ -3,7 +3,7 @@ variable "project" {
     default     = "de-zoomcamp-capstone"
 }
 
-variable "credentials_file" {
+variable "credentials" {
     default = "/home/user/de-zoomcamp-capstone/config/.secret.json"
     type    = string
 }
