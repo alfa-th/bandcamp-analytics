@@ -12,14 +12,14 @@ I would also like to express my appreciation to [DataTalks.Club](datatalks.club)
 - [Looker Studio](https://lookerstudio.google.com/navigation/reporting) for reporting and visualization
 
 ## [Dashboard](https://lookerstudio.google.com/reporting/e1170d06-3785-4092-ae2d-483773b95acc)
-![Dashboard](dashboard.png)
+![Dashboard](data/dashboard.png)
 
 ## Technical Summary
 ### Bird's eye view of the project
-![All Flow](all_flow.png)
+![All Flow](data/all_flow.png)
 
 ### DBT Flow
-![DBT Flow](dbt_flow.png)
+![DBT Flow](data/dbt_flow.png)
 
 ### Schema of final Fact Table used for visualization
 - `_id`: Unique identifier combining the sale's URL and UTC timestamp
@@ -80,3 +80,5 @@ To set up the project, perform these steps:
 - DBT
    - Proper docs.
    - Add tests.
+- Looker Studio
+   - Utilize tables derived from the fact table.
