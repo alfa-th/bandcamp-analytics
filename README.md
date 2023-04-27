@@ -13,6 +13,7 @@ This project leverages [Component's dataset](https://components.one/datasets/ban
 ![Dashboard](dashboard.png)
 
 ## Technical Summary
+
 ### Bird's eye view of the project
 ![All Flow](all_flow.png)
 ### DBT Flow
@@ -35,8 +36,6 @@ This project leverages [Component's dataset](https://components.one/datasets/ban
 - `paid_to_price_ratio`: Ratio of amount paid to item price
 
 ## Running
-
-Here is a possible rewrite:
 
 To ensure that the project runs smoothly, you should have the following prerequisites in place:
 - A [GCP Account](https://cloud.google.com/)
