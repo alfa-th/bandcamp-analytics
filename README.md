@@ -6,7 +6,7 @@ I would also like to express my appreciation to [DataTalks.Club](datatalks.club)
 ## Technology Stacks
 - [Terraform](https://www.terraform.io/) for IaC
 - [Prefect](https://www.prefect.io/) for pipeline orchestration
-- [Polars](https://www.pola.rs/) for ETL
+- [Polars](https://www.pola.rs/) for batch processing
 - [BigQuery](https://cloud.google.com/bigquery) for data warehouse  
 - [DBT](https://www.getdbt.com/) for ELT
 - [Looker Studio](https://lookerstudio.google.com/navigation/reporting) for reporting and visualization
