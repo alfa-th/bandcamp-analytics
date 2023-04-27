@@ -35,28 +35,47 @@ This project leverages [Component's dataset](https://components.one/datasets/ban
 - paid_to_price_ratio: Ratio of amount paid to item price
 
 ## Running
-0. Prerequisites:
-    - [GCP Account](https://cloud.google.com/)
-    - GCP Service Account file from the GCP account
-1. Clone the repo
-    - Put the service account file on `config/` as `.secret.json`
-2. Prepare a venv
-    - Install all of requirements.txt
-    - Activate it
-3. Prefect orchestration
-    - `cd` to "orchest/"
-    - On venv, do `pip install -e .`
-    - Deploy all the flows by running
-        - `prefect deployment build -a flows/web_2_local_2_gcs.py:main --name web_2_gcs`
-        - `prefect deployment build -a flows/gcs_2_bq.py:main --name gcs_2_bq`
-    - Ready a prefect agent up
-    - Run these flows `web_2_gcs` and `gcs_2_bq` in order from either Prefect Orion or from CLI
-4. DBT ELT
-    - Modify `~/.dbt/profiles` using service account file attained before based on this part of the article [DBT BiqQuery Setup](https://docs.getdbt.com/reference/warehouse-setups/bigquery-setup#service-account-file)
-    - Perform `dbt run` but make sure you are in `dbt/`
-    - You can also run `dbt docs generate` and then `dbt docs serve` to see the documentaiton
-5. Looker Studio Visualization
-    - Open looker studio on the same account where your bigquery is on
-    - Connect the data
-    - Make viz
-6. Done!
+
+Here is a possible rewrite:
+
+To ensure that the project runs smoothly, you should have the following prerequisites in place:
+- A [GCP Account](https://cloud.google.com/)
+- A GCP Service Account file with owner rights.
+
+To set up the project, perform these steps:
+1. Clone the repository and place the service account file in the `config/` folder as `.secret.json`.
+2. Prepare your GCP infrastructure:
+   - You can manually create a GCS bucket and a BQ dataset named `bandcamp`.
+   - Alternatively, you can use Terraform:
+      - Navigate to the `terraform/` directory using `cd`.
+      - Modify the configuration in `terraform/variables.tf`.
+      - Execute `terraform init`, then `terraform plan`, and review the plan. Finally, execute `terraform apply`.
+3. Set up a virtual environment using either virtualenv or Anaconda. Install all dependencies listed in `requirements.txt`, and activate the environment.
+4. To use Prefect for orchestration, do the following:
+   - Navigate to the `orchest/` directory using `cd`, and install the flows by running `pip install -e .` in the virtual environment.
+   - Create two Prefect blocks in Orion: GCP Credentials that point to the service account file, and Local File System that point to the local data folder where data files are located.
+   - Modify the constant variables in `flows/web_2_local_2_gcs.py` and `flows/gcs_2_bq.py` as needed.
+   - Deploy all flows by running the following commands:
+     - `prefect deployment build -a flows/web_2_local_2_gcs.py:main --name web_2_gcs`
+     - `prefect deployment build -a flows/gcs_2_bq.py:main --name gcs_2_bq`
+   - Run a Prefect agent, then execute the `web_2_gcs` and `gcs_2_bq` flows in order, either from Prefect Orion or from the command line.
+5. To use DBT for ELT, do the following:
+   - Modify `~/.dbt/profiles` using the GCP service account file, based on the instructions in the [DBT BigQuery Setup](https://docs.getdbt.com/reference/warehouse-setups/bigquery-setup#service-account-file) section of the documentation.
+   - Execute `dbt run` in the `dbt/` directory.
+   - To generate documentation, execute `dbt docs generate`, then `dbt docs serve`.
+6. To visualize the data using Looker Studio Visualization, follow these steps:
+   - Open Looker Studio using the same account where your BigQuery is located.
+   - Connect the data and create visualizations.
+7. You're done!
+
+## Note for DataTalksClub evaluators
+- The process of which tables are partitioned and clustered can be seen on `orchest/flows/gcs_2_bq.py` with its reasoning and explanation
+
+## Todo
+- Prefect
+   - One script to deploy all flows instead of using CLI.
+   - Find a way to to put hard coded constants somewhere else, maybe in prefect blocks.
+   - Find a way to utilize DaskTaskRunner with polars for blazingly fast ETL.
+- DBT
+   - Proper docs.
+   - Add tests.
