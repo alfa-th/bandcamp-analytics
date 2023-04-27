@@ -17,7 +17,7 @@ This project leverages [Component's dataset](https://components.one/datasets/ban
 ![All Flow](all_flow.png)
 ### DBT Flow
 ![DBT Flow](dbt_flow.png)
-### Schema of final Fact Table used for vizualiation
+### Schema of final Fact Table used for visualization
 - _id: Unique identifier combining the sale's URL and UTC timestamp
 - transaction_date: Transaction datetime
 - url: The path to the item on Bandcamp
