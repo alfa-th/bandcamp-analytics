@@ -3,4 +3,5 @@ polars==0.17.3
 prefect-gcp[cloud_storage]==0.4.0
 prefect-gcp[bigquery]==0.4.8
 prefect-shell==0.1.5
+dbt-bigquery
 black
