@@ -10,7 +10,11 @@ This project leverages [Component's dataset](https://components.one/datasets/ban
 - [Looker Studio](https://lookerstudio.google.com/navigation/reporting) for reporting and visualization
 
 ## [Dashboard](https://lookerstudio.google.com/reporting/e1170d06-3785-4092-ae2d-483773b95acc)
-![Screenshot](viz.png)
+![Dashboard](viz.png)
 
 ## Technical Summary
 ### Bird's eye view of the project
+![All Flow](all_flow.png)
+### DBT Flow
+![DBT Flow](dbt_flow.png)
+### Final Fact Table Used
