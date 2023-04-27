@@ -18,3 +18,18 @@ This project leverages [Component's dataset](https://components.one/datasets/ban
 ### DBT Flow
 ![DBT Flow](dbt_flow.png)
 ### Final Fact Table Used
+- _id: Unique identifier combining the sale's URL and UTC timestamp
+- transaction_date: Transaction datetime
+- url: The path to the item on Bandcamp
+- artist_name: Name of the artist
+- album_title: Title of the album, if applicable
+- item_type: Denotes the type of object transacted whether if its an physical album, digital album, or digital track
+- slug_type: Denotes the type of object transacted whether if its n album, track, or merch
+- country: Country of the buyer
+- item_price: Item price set by the seller in seller's currency
+- amount_paid: Amount of money paid in seller's currency
+- currency: Currency used by the seller
+- item_price_usd: Item price converted to dollar
+- amount_paid_usd: Amount paid converted to dollar
+- amount_overpaid_usd: Amount voluntarily paid by the buyer in dollar
+- paid_to_price_ratio: Ratio of amount paid to item price
