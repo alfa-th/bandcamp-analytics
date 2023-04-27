@@ -70,7 +70,7 @@ To set up the project, perform these steps:
 7. You're done!
 
 ## Note for DataTalksClub evaluators
-- The process of which tables are partitioned and clustered can be seen on `orchest/flows/gcs_2_bq.py` with it's reasoning and explanation
+- The process of which columns are partitioned and clustered can be seen on `orchest/flows/gcs_2_bq.py` with it's reasoning and explanation
 
 ## Todo
 - Prefect
