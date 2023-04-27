@@ -12,14 +12,14 @@ I would also like to express my appreciation to [DataTalks.Club](datatalks.club)
 - [Looker Studio](https://lookerstudio.google.com/navigation/reporting) for reporting and visualization
 
 ## [Dashboard](https://lookerstudio.google.com/reporting/e1170d06-3785-4092-ae2d-483773b95acc)
-![Dashboard](data/dashboard.png)
+![Dashboard](docs/dashboard.png)
 
 ## Technical Summary
 ### Bird's eye view of the project
-![All Flow](data/all_flow.png)
+![All Flow](docs/all_flow.png)
 
 ### DBT Flow
-![DBT Flow](data/dbt_flow.png)
+![DBT Flow](docs/dbt_flow.png)
 
 ### Schema of final Fact Table used for visualization
 - `_id`: Unique identifier combining the sale's URL and UTC timestamp
