@@ -26,11 +26,15 @@ def main():
     
     client.create_dataset(DATASET_ID, exists_ok=True)
 
+    # Partition by day because its already the way the data are split and
+    # partitioning by something else but this doesnt make sense
     time_partitioning = TimePartitioning(
         type_=TimePartitioningType.DAY, field="utc_date"
     )
+
+    # Clustering by country can help map visualization
     job_config = get_load_job_config(
-        BANDCAMP_SCHEMA, time_partitioning, ["country_code", "currency"]
+        BANDCAMP_SCHEMA, time_partitioning, ["country"]
     )
 
     load_job = client.load_table_from_uri(
