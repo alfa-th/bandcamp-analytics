@@ -1,5 +1,7 @@
 # Data Engineering Zoomcamp Capstone Project 
-This project leverages [Component's dataset](https://components.one/datasets/bandcamp-sales) containing [Bandcamp](https://bandcamp.com/) transactions from September 9, 2020 to October 2, 2020, to gain insights into sales and evaluate the effectiveness of Bandcamp's business model. The insights obtained from this project are similar to those presented in Component's report, [The Chaos Bazaar](https://components.one/posts/bandcamp-the-chaos-bazaar). While the Component's report already provides better insights than this project, the project owner undertakes it to hone their data engineering skills, including pipeline orchestration, DBT ETL, terraform, and other related techniques.
+This project leverages Component's dataset containing Bandcamp transactions from September 9, 2020 to October 2, 2020, to gain insights into sales and evaluate the effectiveness of Bandcamp's business model. The insights obtained from this project are similar to those presented in Component's report, The Chaos Bazaar. While the Component's report might provides better insights than this project, the project owner undertakes it to hone their data engineering skills, including pipeline orchestration, DBT ELT, terraform, and other related techniques.
+
+I would also like to express my appreciation to [DataTalks.Club](datatalks.club) for providing me with the opportunity to learn data engineering in a structured and effective way, as well as for offering various chances to practice and improve my skills. Thanks to their resources and support, I have been able to learn and test my abilities in docker, pipeline orchestration, apache spark for batch processing, DBT for ELT, kafka for stream processing, and related techniques.
 
 ## Technology Stacks
 - [Terraform](https://www.terraform.io/) for IaC
@@ -13,11 +15,12 @@ This project leverages [Component's dataset](https://components.one/datasets/ban
 ![Dashboard](dashboard.png)
 
 ## Technical Summary
-
 ### Bird's eye view of the project
 ![All Flow](all_flow.png)
+
 ### DBT Flow
 ![DBT Flow](dbt_flow.png)
+
 ### Schema of final Fact Table used for visualization
 - `_id`: Unique identifier combining the sale's URL and UTC timestamp
 - `transaction_date`: Transaction datetime
@@ -36,7 +39,6 @@ This project leverages [Component's dataset](https://components.one/datasets/ban
 - `paid_to_price_ratio`: Ratio of amount paid to item price
 
 ## Running
-
 To ensure that the project runs smoothly, you should have the following prerequisites in place:
 - A [GCP Account](https://cloud.google.com/)
 - A GCP Service Account file with owner rights.
@@ -68,7 +70,7 @@ To set up the project, perform these steps:
 7. You're done!
 
 ## Note for DataTalksClub evaluators
-- The process of which tables are partitioned and clustered can be seen on `orchest/flows/gcs_2_bq.py` with its reasoning and explanation
+- The process of which tables are partitioned and clustered can be seen on `orchest/flows/gcs_2_bq.py` with it's reasoning and explanation
 
 ## Todo
 - Prefect
